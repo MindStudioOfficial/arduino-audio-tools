@@ -138,14 +138,13 @@ class int24_4bytes_t  {
 
 #ifdef USE_TYPETRAITS
 #include <limits>
-
 namespace std {
     template<> class numeric_limits<audio_tools::int24_4bytes_t> {
     public:
-       static audio_tools::int24_4bytes_t lowest() {return audio_tools::int24_4bytes_t(-0x7FFFFF);};
-       static audio_tools::int24_4bytes_t min() {return audio_tools::int24_4bytes_t(-0x7FFFFF);};
-       static audio_tools::int24_4bytes_t max() {return audio_tools::int24_4bytes_t(0x7FFFFF);};
-    };
+       static audio_tools::int24_4bytes_t lowest() {return audio_tools::int24_4bytes_t(static_cast<int32_t>(-0x7FFFFF));};
+       static audio_tools::int24_4bytes_t min() {return audio_tools::int24_4bytes_t(static_cast<int32_t>(-0x7FFFFF));};
+       static audio_tools::int24_4bytes_t max() {return audio_tools::int24_4bytes_t(static_cast<int32_t>(0x7FFFFF));};    };
 }
+
 
 #endif

@@ -137,10 +137,9 @@ class int24_3bytes_t  {
 namespace std {
     template<> class numeric_limits<audio_tools::int24_3bytes_t> {
     public:
-       static audio_tools::int24_3bytes_t lowest() {return audio_tools::int24_3bytes_t(-0x7FFFFF);};
-       static audio_tools::int24_3bytes_t min() {return audio_tools::int24_3bytes_t(-0x7FFFFF);};
-       static audio_tools::int24_3bytes_t max() {return audio_tools::int24_3bytes_t(0x7FFFFF);};
+       static audio_tools::int24_3bytes_t lowest() {return audio_tools::int24_3bytes_t(static_cast<int32_t>(-0x7FFFFF));};
+       static audio_tools::int24_3bytes_t min() {return audio_tools::int24_3bytes_t(static_cast<int32_t>(-0x7FFFFF));};
+       static audio_tools::int24_3bytes_t max() {return audio_tools::int24_3bytes_t(static_cast<int32_t>(0x7FFFFF));};
     };
 }
-
 #endif
