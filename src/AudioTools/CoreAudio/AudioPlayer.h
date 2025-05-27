@@ -2,7 +2,9 @@
 
 #include "AudioToolsConfig.h"
 #include "AudioTools/CoreAudio/AudioBasic/Debouncer.h"
+#ifndef DISABLE_AUDIOPLAYER_HTTP
 #include "AudioTools/CoreAudio/AudioHttp/AudioHttp.h"
+#endif
 #include "AudioTools/CoreAudio/AudioLogger.h"
 #include "AudioTools/CoreAudio/AudioStreams.h"
 #include "AudioTools/CoreAudio/AudioTypes.h"
